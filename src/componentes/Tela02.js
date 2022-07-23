@@ -13,7 +13,7 @@ export default function Tela02(){
            <div class="textoTopo"><h1>ZapRecall</h1></div>
         </div>
         <div class="containerFlashCards"> 
-           <FlashCards / >
+           <BotoesFlashCard / >
         </div>
           <BarraBottom/>
      </div>
