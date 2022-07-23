@@ -208,7 +208,139 @@
 
   .desligado {
     display: none;
+    margin: 60px 
   }
 
+  .flashCard{
+    height: 131px;
+    width: 299px;
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  .face{
+    border-radius: 5px;
+    background-color:#FFFFD4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s ease-in-out;
+    
+  }
+
+  .frente h3{
+    font-family: 'Recursive';
+    font-size: 18px;
+    font-weight: 400;
+    height: 22px;
+    margin: 16px;
+   
+  }
+
+  .frente img{
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    bottom: 6px;
+   }
+
+   .costa{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: rotateY(180deg)
+   }
+
+   .costa  h3{
+    font-family: 'Recursive';
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    height: 22px;
+    margin: 16px;
+   }
+
+   .virada .costa{
+    transform: rotateY(0deg)
+   }
+
+   .virada .frente{
+    transform: rotateY(-180deg);
+   }
+
+   .costa .escolha {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+
+   }
+
+
+   .naoLembrei{
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37.16571807861328px;
+    width: 85.17144012451172px;
+    left: 308px;
+    top: -2845.165771484375px;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #FF3030;
+    font-family: Recursive;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: center;
+          
+   }
+
+   .quaseLembrei{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37.16571807861328px;
+    width: 85.17144012451172px;
+    left: 308px;
+    top: -2845.165771484375px;
+    border-radius: 5px;
+    background: #FF922E;
+    text-align: center;
+    color: #ffffff;
+    font-family: Recursive;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: center;
+   }
+
+   .zap{
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37.16571807861328px;
+    width: 85.17144012451172px;
+    left: 308px;
+    top: -2845.165771484375px;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #2FBE34;
+    font-family: Recursive;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: center;
+   }
 }
 

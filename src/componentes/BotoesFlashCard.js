@@ -3,9 +3,9 @@ import React from "react"
 import DadosDeckJSX from "../data/DeckJSX"
 
 function BotaoFlashCard(props){
-    const [index, setIndex] = React.useState('index')
+    const [clikada, setClikada] = React.useState(true)
     return (
-        <button className="pergunta">
+        <button onClick={() => setClikada(clikada) } className="pergunta">
             <h2>Pergunta {props.numPergunta}</h2> 
             <ion-icon name="play-outline"></ion-icon>
         </button>
