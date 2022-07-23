@@ -144,6 +144,36 @@
 
  }
 
+
+ .concluida h2{
+  font-family: 'Recursive', sans-serif;
+  Width:87px;
+  Height:19px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 5px;
+  text-decoration: line-through;
+ }
+ 
+ .concluida img {
+  margin-right: 19px;
+ }
+
+ .vermelho{
+  color: #FF3030;
+ }
+
+ .laranja{
+  color: #FF922E
+ }
+
+ .verde{
+  color: #2FBE34;
+ }
+
    .barraBottom{
     min-height: 70px;
     width: 100%;
@@ -215,6 +245,7 @@
     width: 299px;
     position: relative;
     margin-bottom: 25px;
+    margin-top: 25px;
   }
 
   .face{
