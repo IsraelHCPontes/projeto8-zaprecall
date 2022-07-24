@@ -1,7 +1,7 @@
 export default function Cor({respostaCliente, setCor}){
     switch(respostaCliente){
         case 'zap':
-            return 'verde'
+            setCor('verde')
             break;
             
         case 'quasenaoLembrei':

@@ -44,16 +44,18 @@
 import React from "react"
 import DadosDeckJSX from "../data/DeckJSX"
 import FlashCards from "./FlashCard"
-import Icone from "./Icones";
 
+import Cor from "./Cor";
+import PerguntaConcluida from "./PerguntaConcluida";
 
 function BotaoFlashCard({numPergunta, pergunta, resposta}) {
     const [botao, setBotao] = React.useState(true);
     const [respostaCliente, setRespostaCliente] = React.useState("")
     const [cor, setCor] = React.useState('')
     
-
-
+  
+   
+    
     return (
         <>
             {botao
@@ -65,14 +67,9 @@ function BotaoFlashCard({numPergunta, pergunta, resposta}) {
                 :
                 !respostaCliente ? <FlashCards pergunta={pergunta} resposta={resposta}  respostaCliente={respostaCliente} setRespostaCliente={setRespostaCliente} />
                 : 
-                 <button onClick={() => setBotao(!botao)} className={`pergunta concluida ${cor}`}>
-                    <h2>Pergunta{numPergunta}</h2>
-                    <Icone respostaCliente={respostaCliente}/>
-                </button>
-                 
-            }
-            
-            </>
+                 <PerguntaConcluida  respostaCliente={respostaCliente} cor={cor} setCor={setCor} botao={botao} setBotao={setBotao} numPergunta={numPergunta} respostaCliente={respostaCliente}/>}
+                        
+        </>
         
     )
 
