@@ -5,7 +5,11 @@ import FlashCards from "./FlashCard";
 
 
 export default function Tela02(){
- 
+   const array = []
+   array.push(BarraBottom)
+   console.log(array)
+   const [concluidas, setConcluidas] = React.useState(array.length)
+
     return (
      <div class="tela02">
         <div className="topoAPP">
@@ -13,9 +17,9 @@ export default function Tela02(){
            <div class="textoTopo"><h1>ZapRecall</h1></div>
         </div>
         <div class="containerFlashCards"> 
-           <BotoesFlashCard / >
+           <BotoesFlashCard concluidas={concluidas} / >
         </div>
-          <BarraBottom/>
+          <BarraBottom concluidas={concluidas} setConcluida={setConcluidas}  />
      </div>
     )
 }

@@ -48,13 +48,12 @@ import FlashCards from "./FlashCard"
 import Cor from "./Cor";
 import PerguntaConcluida from "./PerguntaConcluida";
 
+
 function BotaoFlashCard({numPergunta, pergunta, resposta}) {
     const [botao, setBotao] = React.useState(true);
     const [respostaCliente, setRespostaCliente] = React.useState("")
     const [cor, setCor] = React.useState('')
-    
-  
-   
+    const [concluido, setConcluido] = React.useState(0)
     
     return (
         <>
@@ -65,9 +64,9 @@ function BotaoFlashCard({numPergunta, pergunta, resposta}) {
                  <ion-icon name="play-outline"></ion-icon> 
                 </button>
                 :
-                !respostaCliente ? <FlashCards pergunta={pergunta} resposta={resposta}  respostaCliente={respostaCliente} setRespostaCliente={setRespostaCliente} />
+                !respostaCliente ? <FlashCards pergunta={pergunta} resposta={resposta}  respostaCliente={respostaCliente} setRespostaCliente={setRespostaCliente} concluido={concluido} setConcluido={setConcluido} />
                 : 
-                 <PerguntaConcluida  respostaCliente={respostaCliente} cor={cor} setCor={setCor} botao={botao} setBotao={setBotao} numPergunta={numPergunta} respostaCliente={respostaCliente}/>}
+                 <PerguntaConcluida  respostaCliente={respostaCliente} cor={cor} setCor={setCor} botao={botao} setBotao={setBotao} numPergunta={numPergunta} />}
                         
         </>
         
@@ -75,8 +74,7 @@ function BotaoFlashCard({numPergunta, pergunta, resposta}) {
 
 }
 
-
-export default function BotoesFlashCard() { 
+export default function BotoesFlashCard({concluidas}) { 
     
-   return DadosDeckJSX.map((props, index) => <BotaoFlashCard numPergunta={index + 1} pergunta={props.pergunta} resposta={props.resposta}/>)
+   return DadosDeckJSX.map((props, index) => <BotaoFlashCard numPergunta={index + 1} pergunta={props.pergunta} resposta={props.resposta} concluidas={concluidas}/>)
 }

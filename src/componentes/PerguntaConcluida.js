@@ -26,7 +26,7 @@ export default function PerguntaConcluida({
     
     
    return( 
-        <button onClick={() => setBotao(!botao)} className={`pergunta concluida ${cor}`}>
+        <button className={`pergunta concluida ${cor}`}>
         <h2>Pergunta{numPergunta}</h2>
         <Icone respostaCliente={respostaCliente}/>
         </button>
