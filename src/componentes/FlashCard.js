@@ -5,7 +5,7 @@ import React from "react"
 
   
 
-export default function FlashCards({pergunta, resposta, setRespostaCliente, setConcluido, concluido}){
+export default function FlashCards({pergunta, resposta, setRespostaCliente, setConcluido, concluido, setIconeResposta, iconeResposta}){
   const [clikada, setClikado] = React.useState(false)
   
   return(
@@ -19,9 +19,9 @@ export default function FlashCards({pergunta, resposta, setRespostaCliente, setC
                       <h3>{resposta}</h3>
                   
                       <div className="escolha" >
-                          <button onClick={() => {setConcluido(concluido +1); setRespostaCliente('naoLembrei')}}  className="naoLembrei">Não lembrei</button>
-                          <button onClick={() =>  {setConcluido(concluido +1); setRespostaCliente('quasenaoLembrei')}}  className="quaseLembrei">Quase não lembrei</button>
-                          <button onClick={() =>  {setConcluido(concluido +1);setRespostaCliente('zap')}}  className="zap">Zap!</button>
+                          <button onClick={() => {setConcluido(concluido +1); setRespostaCliente('naoLembrei');  setIconeResposta(<img src="./arquivosulteis/img/x.svg"/>)}}  className="naoLembrei">Não lembrei</button>
+                          <button onClick={() =>  {setConcluido(concluido +1); setRespostaCliente('quasenaoLembrei'); setIconeResposta(<img src="./arquivosulteis/img/interrogacao.svg"/>)}}  className="quaseLembrei">Quase não lembrei</button>
+                          <button onClick={() =>  {setConcluido(concluido +1);setRespostaCliente('zap');setIconeResposta(<img src="./arquivosulteis/img/ok.svg"/>)}}  className="zap">Zap!</button>
                       </div>
                      </div>
                </div>                  

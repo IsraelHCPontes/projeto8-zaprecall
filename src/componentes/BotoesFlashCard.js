@@ -49,12 +49,12 @@ import Cor from "./Cor";
 import PerguntaConcluida from "./PerguntaConcluida";
 
 
-function BotaoFlashCard({numPergunta, pergunta, resposta}) {
+
+function BotaoFlashCard({numPergunta, pergunta, resposta, concluido, setConcluido, setIconeResposta, iconeResposta}) {
     const [botao, setBotao] = React.useState(true);
     const [respostaCliente, setRespostaCliente] = React.useState("")
     const [cor, setCor] = React.useState('')
-    const [concluido, setConcluido] = React.useState(0)
-    
+
     return (
         <>
             {botao
@@ -64,7 +64,7 @@ function BotaoFlashCard({numPergunta, pergunta, resposta}) {
                  <ion-icon name="play-outline"></ion-icon> 
                 </button>
                 :
-                !respostaCliente ? <FlashCards pergunta={pergunta} resposta={resposta}  respostaCliente={respostaCliente} setRespostaCliente={setRespostaCliente} concluido={concluido} setConcluido={setConcluido} />
+                !respostaCliente ? <FlashCards pergunta={pergunta} resposta={resposta}  respostaCliente={respostaCliente} setRespostaCliente={setRespostaCliente} concluido={concluido} setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta}/>
                 : 
                  <PerguntaConcluida  respostaCliente={respostaCliente} cor={cor} setCor={setCor} botao={botao} setBotao={setBotao} numPergunta={numPergunta} />}
                         
@@ -74,7 +74,9 @@ function BotaoFlashCard({numPergunta, pergunta, resposta}) {
 
 }
 
-export default function BotoesFlashCard({concluidas}) { 
-    
-   return DadosDeckJSX.map((props, index) => <BotaoFlashCard numPergunta={index + 1} pergunta={props.pergunta} resposta={props.resposta} concluidas={concluidas}/>)
+export default function BotoesFlashCard({concluidas, setConcluido, concluido,setIconeResposta, iconeResposta}) { 
+  
+   
+
+   return DadosDeckJSX.map((props, index) => <BotaoFlashCard numPergunta={index + 1} pergunta={props.pergunta} resposta={props.resposta} concluidas={concluidas} concluido={concluido} setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta}/>)
 }

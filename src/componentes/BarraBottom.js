@@ -1,21 +1,28 @@
 import DadosDeckJSX from "../data/DeckJSX"
+import Iconsebtottom from "./Iconesbottom"
 
-export default function BarraBottom(props){
 
+export default function BarraBottom({iconeResposta, setIconeResposta, concluido, saldacao, mensagem}){
+   
    return ( <div className="barraBottom">
                 <div className="msgRetorno desligado">
                     <img src="./arquivosulteis/img/party.png" alt="" />
-                    <h3>{props.saldacao}</h3>
+                    <h3>{saldacao}</h3>
                 </div>
                 <div className="msgRetornoTexto desligado ">
-                    <h3>{props.mensagem}</h3>
+                    <h3>{mensagem}</h3>
                 </div>
-                <h3>{props.concluidas}/{DadosDeckJSX.length}CONCLUÍDOS</h3>
-                <div className="icones desligado ">
-                    <img src="./arquivosulteis/img/ok.svg"/>
-                    <img src="./arquivosulteis/img/D.svg"/>
-                    <img src="./arquivosulteis/img/x.svg"/>
+                <h3>{concluido}/{DadosDeckJSX.length}CONCLUÍDOS</h3>
+                <div className="icones ">
+                    <Iconsebtottom iconeResposta={iconeResposta} setIconeResposta={setIconeResposta}/>
                 </div>
             </div>
          )
 }
+
+
+
+
+{/* <img src="./arquivosulteis/img/ok.svg"/>
+                    <img src="./arquivosulteis/img/D.svg"/>
+                    <img src="./arquivosulteis/img/x.svg"/> */}
