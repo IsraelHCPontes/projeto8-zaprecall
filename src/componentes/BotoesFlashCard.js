@@ -46,6 +46,8 @@ export default function BotoesFlashCard({
     erro,
     setErro}){ 
   
+    DadosDeckJSX.sort(() => Math.random() - 0.5)
+        
    return DadosDeckJSX.map((props, index) => <BotaoFlashCard numPergunta={index + 1} pergunta={props.pergunta} resposta={props.resposta} concluidas={concluidas} concluido={concluido} setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro}/>)
 
 }
