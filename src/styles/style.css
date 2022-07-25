@@ -111,7 +111,7 @@
    .containerFlashCards{
     width: 300px;
     margin-top: 153px;
-    margin-bottom: 90px;
+    margin-bottom: 230px;
    }
 
   .pergunta{
@@ -206,7 +206,7 @@
   .msgRetorno{
     display: flex;
     margin-top: 16px;
-    margin-bottom: 14px;
+   
    
   }
   .msgRetorno h3{

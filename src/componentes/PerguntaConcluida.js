@@ -4,8 +4,6 @@ export default function PerguntaConcluida({
      respostaCliente,
      cor, 
      setCor, 
-     botao, 
-     setBotao, 
      numPergunta 
     }){
 

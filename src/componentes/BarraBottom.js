@@ -1,28 +1,26 @@
 import DadosDeckJSX from "../data/DeckJSX"
 import Iconsebtottom from "./Iconesbottom"
+import MsgParabens from "./MsgParabens"
+import MsgErro from "./MsgErro"
 
+const respostas= []
 
-export default function BarraBottom({iconeResposta, setIconeResposta, concluido, saldacao, mensagem}){
+export default function BarraBottom({iconeResposta,
+    setIconeResposta,
+    concluido,
+    erro, }){
+        
+    respostas.push(iconeResposta)
    
-   return ( <div className="barraBottom">
-                <div className="msgRetorno desligado">
-                    <img src="./arquivosulteis/img/party.png" alt="" />
-                    <h3>{saldacao}</h3>
+    return ( <div className="barraBottom">
+                {(respostas.length -1) !== DadosDeckJSX.length ? false :( erro === 0 )? <MsgParabens/> : <MsgErro/>}
+                    <h3>{concluido}/{DadosDeckJSX.length}CONCLUÍDOS</h3>
+                    <div className="icones ">
+                        <Iconsebtottom iconeResposta={iconeResposta} setIconeResposta={setIconeResposta}/>
+                    </div>
                 </div>
-                <div className="msgRetornoTexto desligado ">
-                    <h3>{mensagem}</h3>
-                </div>
-                <h3>{concluido}/{DadosDeckJSX.length}CONCLUÍDOS</h3>
-                <div className="icones ">
-                    <Iconsebtottom iconeResposta={iconeResposta} setIconeResposta={setIconeResposta}/>
-                </div>
-            </div>
-         )
+            )
 }
 
 
 
-
-{/* <img src="./arquivosulteis/img/ok.svg"/>
-                    <img src="./arquivosulteis/img/D.svg"/>
-                    <img src="./arquivosulteis/img/x.svg"/> */}
