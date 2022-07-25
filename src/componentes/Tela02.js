@@ -3,13 +3,17 @@ import BotoesFlashCard from "./BotoesFlashCard";
 import BarraBottom from "./BarraBottom";
 
 
-export default function Tela02(){
-
+export default function Tela02({
+   clikado,
+   setClickado}){
+    
+    
+   const [respostasIcones, setRespostaIcones] = React.useState([])      
    const [concluido, setConcluido] = React.useState(0)
    const [iconeResposta, setIconeResposta] = React.useState(false)
    const [concluidas, setConcluidas] = React.useState(0)
    const [erro, setErro] = React.useState(0)
- 
+   
     return (
      <div className="tela02">
         <div className="topoAPP">
@@ -17,9 +21,26 @@ export default function Tela02(){
            <div className="textoTopo"><h1>ZapRecall</h1></div>
         </div>
         <div className="containerFlashCards"> 
-           <BotoesFlashCard concluidas={concluidas} concluido={concluido}  setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro}/ >
+           <BotoesFlashCard 
+          concluidas={concluidas}
+          concluido={concluido} 
+          setConcluido={setConcluido} 
+          iconeResposta={iconeResposta} 
+          setIconeResposta={setIconeResposta}
+          erro={erro} setErro={setErro}
+          respostasIcones={respostasIcones}
+          setRespostaIcones={setRespostaIcones} / >
         </div>
-          <BarraBottom concluido={concluido} setConcluida={setConcluidas} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro}/>
+        <BarraBottom
+        concluido={concluido}
+        setConcluida={setConcluidas}
+        iconeResposta={iconeResposta}
+        setIconeResposta={setIconeResposta}
+        erro={erro} setErro={setErro}
+        estate={clikado}
+        setClickado={setClickado}
+         respostasIcones={respostasIcones}
+          setRespostaIcones={setRespostaIcones}  />
      </div>
     )
 }

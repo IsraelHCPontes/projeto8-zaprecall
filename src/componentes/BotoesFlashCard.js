@@ -12,7 +12,11 @@ function BotaoFlashCard({
     setIconeResposta,
     iconeResposta,
     erro,
-    setErro}){
+    setErro,
+    respostasIcones, 
+    setRespostaIcones}){
+
+     
 
     const [botao, setBotao] = React.useState(true);
     const [respostaCliente, setRespostaCliente] = React.useState("")
@@ -27,7 +31,8 @@ function BotaoFlashCard({
                  <ion-icon name="play-outline"></ion-icon> 
                 </button>
                 :
-                !respostaCliente ? <FlashCards pergunta={pergunta} resposta={resposta}  respostaCliente={respostaCliente} setRespostaCliente={setRespostaCliente} concluido={concluido} setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro}/>
+                !respostaCliente ? <FlashCards pergunta={pergunta} resposta={resposta}  respostaCliente={respostaCliente} setRespostaCliente={setRespostaCliente} concluido={concluido} setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro} respostasIcones={respostasIcones}
+                setRespostaIcones={setRespostaIcones}/>
                 : 
                  <PerguntaConcluida  respostaCliente={respostaCliente} cor={cor} setCor={setCor}  numPergunta={numPergunta} />}
                         
@@ -44,10 +49,13 @@ export default function BotoesFlashCard({
     setIconeResposta,
     iconeResposta,
     erro,
-    setErro}){ 
+    setErro,
+    respostasIcones, 
+    setRespostaIcones}){ 
   
-    DadosDeckJSX.sort(() => Math.random() - 0.5)
+    
         
-   return DadosDeckJSX.map((props, index) => <BotaoFlashCard  key={index} numPergunta={index + 1} pergunta={props.pergunta} resposta={props.resposta} concluidas={concluidas} concluido={concluido} setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro}/>)
+   return DadosDeckJSX.map((props, index) => <BotaoFlashCard  key={index} numPergunta={index + 1} pergunta={props.pergunta} resposta={props.resposta} concluidas={concluidas} concluido={concluido} setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro} respostasIcones={respostasIcones}
+   setRespostaIcones={setRespostaIcones}/>)
 
 }

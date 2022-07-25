@@ -376,5 +376,24 @@
     text-align: center;
     margin-right: 13px;
    }
+
+   .barraBottom button{
+    height: 32px;
+    width: 167px;
+    left: 3758px;
+    top: -2474px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FB6B6B;
+    margin-bottom: 25px;
+    font-family: Recursive;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ffffff;
+
+   }
 }
 
