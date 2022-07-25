@@ -1,5 +1,5 @@
 const respostasIcones = []
-export default function Iconsebtottom({iconeResposta, setIconeResposta}){
+export default function Iconsebtottom({iconeResposta}){
    respostasIcones.push(iconeResposta)
    return respostasIcones
 }

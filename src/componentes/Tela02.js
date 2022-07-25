@@ -11,12 +11,12 @@ export default function Tela02(){
    const [erro, setErro] = React.useState(0)
  
     return (
-     <div class="tela02">
+     <div className="tela02">
         <div className="topoAPP">
            <img src="./arquivosulteis/img/image 1.svg"/>
-           <div class="textoTopo"><h1>ZapRecall</h1></div>
+           <div className="textoTopo"><h1>ZapRecall</h1></div>
         </div>
-        <div class="containerFlashCards"> 
+        <div className="containerFlashCards"> 
            <BotoesFlashCard concluidas={concluidas} concluido={concluido}  setConcluido={setConcluido} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro}/ >
         </div>
           <BarraBottom concluido={concluido} setConcluida={setConcluidas} iconeResposta={iconeResposta} setIconeResposta={setIconeResposta} erro={erro} setErro={setErro}/>
